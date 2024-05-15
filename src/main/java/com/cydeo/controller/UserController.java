@@ -44,12 +44,12 @@ public class UserController {
             return "/user/create";
 
         }
-//
-//        userService.save(user);
-//
-//        return "redirect:/user/create";
-//
-//    }
+
+        userService.save(user);
+
+        return "redirect:/user/create";
+
+    }}
 //
 //    @GetMapping("/update/{username}")
 //    public String editUser(@PathVariable("username") String username, Model model) {
@@ -86,4 +86,4 @@ public class UserController {
 //        return "redirect:/user/create";
 //    }
 
-}
+//
