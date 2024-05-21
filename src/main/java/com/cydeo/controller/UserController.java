@@ -52,7 +52,7 @@ public class UserController {
     }
 
     @GetMapping("/update/{username}")
-    public String editUser(@PathVariable("username") String username, Model model) {
+    public String editUser(@Valid @PathVariable("username") String username, Model model) {
 
         model.addAttribute("user", userService.findByUsername(username));
         model.addAttribute("roles", roleService.listAllRoles());
@@ -63,7 +63,7 @@ public class UserController {
     }
 
     @PostMapping("/update")
-    public String updateUser(@ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model) {
+    public String updateUser(@Valid @ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model) {
 
         if (bindingResult.hasErrors()) {
 
